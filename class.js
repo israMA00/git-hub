@@ -1,30 +1,36 @@
 
 
-export class App {
-    
-    static exercise = () => {
+export class Account {
 
-        const mySet = new Set();
+    #balance = 0;
+    #transactions = []
 
-        const myMap = new Map([
-            ['user1', {name: 'isra', age: 41, id:123}],
-            ['user2', {name: 'jose', age: 23, id:890}],
-            ['user3', {name: 'maria', age: 15, id:456}],
-            ['user4', {name: 'maria', age: 45, id:550}],
-        ]);
-
-        if(myMap.has('user1')){
-            const getName = myMap.get('user1');
-            getName.age = 42;
-            myMap.set('user1', getName);
-        }
-
-        //adding user´s name to Set
-        myMap.values().forEach(user => {
-            mySet.add(user.name)
-        });
-
-        console.log(mySet);
-    
+    constructor(user, initialDeposit){
+        this.user = user;
+        this.#setInitialDeposit(initialDeposit) 
+       
     }
-}clear
+
+    #setInitialDeposit(deposit){
+        if(deposit < 0){
+            throw new Error('Invalid transaction');
+        }
+       this.#balance = deposit;
+       this.#transactions.push({type: 'deposit', deposit})
+
+    }
+    get balance(){
+        return this.#balance;
+    }
+    get transactions(){
+        return this.#transactions
+    }
+
+}
+
+
+
+
+
+
+
