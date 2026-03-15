@@ -1,7 +1,10 @@
-import { App } from "./class.js";
+import { Account } from "./class.js";
 
 
 (function (){
-    App.exercise();
+
+   const user1 = new Account('isra', 1000);
+   console.log(user1.transactions);
+
 })()
 
