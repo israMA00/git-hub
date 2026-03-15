@@ -1,4 +1,4 @@
-
+//add comments
 
 export class Account {
 
@@ -23,11 +23,12 @@ export class Account {
         return this.#balance;
     }
     get transactions(){
+        //return a copy transactions...
         return [...this.#transactions]
     }
 
     deposit(amount){
-
+        //method deposit
         if(typeof amount !== 'number' || amount <= 0){
             throw new Error('invalid transaction')
         }
@@ -37,7 +38,7 @@ export class Account {
     }
 
     withdraw(amount){
-
+        //method withdraw..
         if(typeof amount !== 'number' || amount <= 0){
             throw new Error('invalid transaction')
         }
