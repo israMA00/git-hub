@@ -9,5 +9,4 @@ import { Account } from "./class.js";
    console.log(user1.transactions);
    console.log(user1.balance);
 
-})()
-
+})();
